@@ -30,12 +30,63 @@ Step 7: Save and run the application.
 ```
 /*
 Program to print the list of item.
-Developed by:
-Registeration Number :
+Developed by:Kanmani U
+Registeration Number :212221040070
 */
+```
+### Activity_Main.java
+```
+Main activity: package com.example.list_view;
+
+import android.os.Bundle; import android.widget.ArrayAdapter; import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+ListView simpleList;
+String countryList[] = {"India", "China", "australia", "Portugal", "America", "NewZealand"};
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    simpleList = (ListView)findViewById(R.id.simpleListView);
+    ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.activity_listview, R.id.textView, countryList);
+    simpleList.setAdapter(arrayAdapter);
+}
+}
+```
+### activity_main.xml
+```
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".MainActivity">
+
+<ListView
+    android:id="@+id/simpleListView"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:divider="#00008B"
+    android:dividerHeight="1dp"
+    android:listSelector="#87CEEB"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+### Activity_listview
+```
+<TextView
+    android:id="@+id/textView"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:padding="16dp"
+    android:textColor="#2359E3" />
 ```
 
 ## OUTPUT
+![Screenshot 2024-04-08 092057](https://github.com/kanmanikannu/listview/assets/114866367/81c9a9db-63d5-4919-8864-392fb5f31253)
 
 
 
